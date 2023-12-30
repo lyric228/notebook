@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QTextEdit, QListWidget, QLineEdit, QInputDialog, QMessageBox
 import json
-
+#ЫАРШПЫАРШЩДГПШЫАшщргЫАргшыапшгфгшафшоафдроларолфарлофаорл
 
 app = QApplication([])
 window = QWidget()
@@ -23,13 +23,13 @@ class UltraQMessageBobux(QMessageBox):
 
 
 def save_files():
-    with open("ultrasupersecretfile.json", "w", encoding="utf-8") as file:
+    with open("data.json", "w", encoding="utf-8") as file:
         json.dump(notes, file)
 
 
 def load_files():
     try:
-        with open("ultrasupersecretfile.json", "r", encoding="utf-8") as file:
+        with open("data.json", "r", encoding="utf-8") as file:
             load = json.load(file)
             return load
     except FileNotFoundError:
