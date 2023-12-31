@@ -119,63 +119,63 @@ def clear_memory():
         refresh(notes)
         save_files()
 
-
-'''
-notes = {
-    "имя заметки": {
-        "текст": "текст замтеки"
-        "теги": [тег1, тег2]
+if __name__ == '__main__':
+    '''
+    notes = {
+        "имя заметки": {
+            "текст": "текст замтеки"
+            "теги": [тег1, тег2]
+            }
         }
-    }
-'''
-
-vline = QVBoxLayout()
-main_hline = QHBoxLayout()
-edit_text = QTextEdit()
-label_notes = QLabel('Список заметок')
-label_tags = QLabel('Список тегов')
-notes_list = QListWidget()
-hline_notes = QHBoxLayout()
-add_note_button = QPushButton('Создать заметку')
-delete_note_button = QPushButton('Удалить заметку')
-save_note_button = QPushButton('Сохранить заметку')
-hline_tags = QHBoxLayout()
-tag_input = QLineEdit()
-tag_input.setPlaceholderText("Введите тег:")
-add_tag_button = QPushButton('Добавить тег')
-delete_tag_button = QPushButton('Удалить тег')
-delete_all_memory = QPushButton('Удалить данные')
-tags_list = QListWidget()
-message_box = QMessageBox()
-
-
-window.setLayout(main_hline)
-main_hline.addWidget(edit_text)
-main_hline.addLayout(vline)
-vline.addWidget(label_notes)
-vline.addWidget(notes_list)
-vline.addLayout(hline_notes)
-hline_notes.addWidget(add_note_button)
-hline_notes.addWidget(delete_note_button)
-vline.addWidget(save_note_button)
-vline.addWidget(label_tags)
-vline.addWidget(tags_list)
-vline.addWidget(tag_input)
-vline.addLayout(hline_tags)
-vline.addWidget(delete_all_memory)
-hline_tags.addWidget(add_tag_button)
-hline_tags.addWidget(delete_tag_button)
-add_note_button.clicked.connect(add_note)
-delete_note_button.clicked.connect(delete_note)
-save_note_button.clicked.connect(save_note)
-notes_list.itemClicked.connect(show_note)
-add_tag_button.clicked.connect(add_tag)
-delete_tag_button.clicked.connect(delete_tag)
-tag_input.textChanged.connect(search_tag)
-delete_all_memory.clicked.connect(clear_memory)
-notes = load_files()
-refresh(notes)
-
-
-window.show()
-app.exec()
+    '''
+    
+    vline = QVBoxLayout()
+    main_hline = QHBoxLayout()
+    edit_text = QTextEdit()
+    label_notes = QLabel('Список заметок')
+    label_tags = QLabel('Список тегов')
+    notes_list = QListWidget()
+    hline_notes = QHBoxLayout()
+    add_note_button = QPushButton('Создать заметку')
+    delete_note_button = QPushButton('Удалить заметку')
+    save_note_button = QPushButton('Сохранить заметку')
+    hline_tags = QHBoxLayout()
+    tag_input = QLineEdit()
+    tag_input.setPlaceholderText("Введите тег:")
+    add_tag_button = QPushButton('Добавить тег')
+    delete_tag_button = QPushButton('Удалить тег')
+    delete_all_memory = QPushButton('Удалить данные')
+    tags_list = QListWidget()
+    message_box = QMessageBox()
+    
+    
+    window.setLayout(main_hline)
+    main_hline.addWidget(edit_text)
+    main_hline.addLayout(vline)
+    vline.addWidget(label_notes)
+    vline.addWidget(notes_list)
+    vline.addLayout(hline_notes)
+    hline_notes.addWidget(add_note_button)
+    hline_notes.addWidget(delete_note_button)
+    vline.addWidget(save_note_button)
+    vline.addWidget(label_tags)
+    vline.addWidget(tags_list)
+    vline.addWidget(tag_input)
+    vline.addLayout(hline_tags)
+    vline.addWidget(delete_all_memory)
+    hline_tags.addWidget(add_tag_button)
+    hline_tags.addWidget(delete_tag_button)
+    add_note_button.clicked.connect(add_note)
+    delete_note_button.clicked.connect(delete_note)
+    save_note_button.clicked.connect(save_note)
+    notes_list.itemClicked.connect(show_note)
+    add_tag_button.clicked.connect(add_tag)
+    delete_tag_button.clicked.connect(delete_tag)
+    tag_input.textChanged.connect(search_tag)
+    delete_all_memory.clicked.connect(clear_memory)
+    notes = load_files()
+    refresh(notes)
+    
+    
+    window.show()
+    app.exec()
